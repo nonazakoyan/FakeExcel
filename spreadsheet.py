@@ -15,22 +15,24 @@ class Spreadsheet:
         self.col = col
         self.mCell = [[cell.Cell() for i in range(col)] for j in range(row)]
 
-    def setCellAt(self, row:int, col:int, obj=None)->None:
+    def setCellAt(self, r:int, c:int, obj=None)->None:
+        #check arguments
+        # 
         pass
 
-    def getCellAt(self, row:int, col:int)->cell.Cell:
+    def getCellAt(self, r:int, c:int)->cell.Cell:
         pass
 
-    def addRow(self, n:int):
+    def addRow(self, row:int):
         pass
 
-    def removeRow(self, n:int):
+    def removeRow(self, row:int):
         pass
 
-    def addColumn(self, n:int):
+    def addColumn(self, col:int):
         pass
 
-    def removeColumn(self, n:int):
+    def removeColumn(self, col:int):
         pass
 
     def swapRows(self, x:int, y:int):

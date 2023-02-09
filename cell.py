@@ -6,16 +6,17 @@ class Cell():
 
     def setValue(self, value:str)->None:
         #convert value to str!
-        pass
+        value = str(value)
+        self.value = value
 
     def setColor(self, color:int)->None:
-        pass
+        self.color = color
 
     def getValue(self)->str:
-        pass
+        return self.value
 
     def getColor(self)->int:
-        pass
+        return self.color
 
     def toInt(self)->bool:
         #get Value
