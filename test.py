@@ -6,16 +6,17 @@ class Test:
         self.cell = cell.Cell()
 
     def setValueTest(self, value):
-        print(f"Result of run setValue() is {'passed' if self.cell.getValue(self.cell.setValue(value)) == value else 'Failed'}")
+        res = type(value) == str
+        print(f"Result of run setValue() is {'passed' if (self.cell.getValue(self.cell.setValue(value)) == value and res)else 'Failed'}")
 
     def setColorTest(self, color):
         print(f"Result of run setColor() is {'passed' if self.cell.getColor(self.cell.setColor(color)) == color else 'Failed'}")
 
     def getValueTest(self):
-        print(f"Result of run getValue is{ 'passed' if type(self.cell.getValue()) == type(str) else 'Failed'}")
+        print(f"Result of run getValue is{ 'passed' if type(self.cell.getValue()) == str else 'Failed'}")
 
     def getColorTest(self):
-        print(f"Result of run getColor() is {'passed' if type(self.cell.getColor()) == type(int) else 'Failed'}")
+        print(f"Result of run getColor() is {'passed' if type(self.cell.getColor()) == int else 'Failed'}")
 
     def toIntTest(self, cellObj):
         print(f"Result of run toInt() is {'passed' if cellObj.toInt() else 'Failed'}")
@@ -36,7 +37,7 @@ class Test:
     def setCellAtTest(self, r, c, obj):
         self.spreadsheet.setCellAt(r,c,obj)
         res = self.spreadsheet.getCellAt(r,c)
-        if type(obj) == type(str):
+        if type(obj) == str:
             print(f"Result of run setCellAt() is {'passed' if res.getValue() == obj else'failed'}")
         else:
             print(f"Result of run setCellAt() is {'passed' if id(res) == id(obj) else'failed'}")
